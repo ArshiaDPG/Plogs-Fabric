@@ -3,7 +3,6 @@ package net.digitalpear.plogs.init;
 import net.digitalpear.plogs.PlogsMod;
 import net.digitalpear.plogs.common.blocks.LogPigBlock;
 import net.digitalpear.plogs.common.blocks.StemHoglinBlock;
-import net.digitalpear.plogs.common.blocks.StemZoglinBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.loader.api.FabricLoader;
@@ -38,8 +37,6 @@ public class PlogsBlocks {
 
     public static final Block LOG_PIG = createBlockWithItem("log_pig", new LogPigBlock(Blocks.OAK_LOG,createPigLogBlock(Blocks.OAK_LOG)), ItemGroup.DECORATIONS);
     public static final Block STEM_HOGLIN = createBlockWithItem("stem_hoglin", new StemHoglinBlock(Blocks.CRIMSON_STEM,createPigStemBlock(Blocks.CRIMSON_STEM)), ItemGroup.DECORATIONS);
-    public static final Block STEM_ZOGLIN = createBlockWithItem("stem_zoglin", new StemZoglinBlock(Blocks.WARPED_STEM,createPigStemBlock(Blocks.WARPED_STEM)), ItemGroup.DECORATIONS);
-
 
     public static void init(){
         PlogsMod.LOGGER.info("Registering Mod Blocks for " + MOD_ID);

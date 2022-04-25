@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:oak_log"
+          "name": "plogs:log_pig"
         }
       ],
       "conditions": [
