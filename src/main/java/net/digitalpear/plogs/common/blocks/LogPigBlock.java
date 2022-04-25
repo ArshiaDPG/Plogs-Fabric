@@ -26,13 +26,6 @@ public class LogPigBlock extends HorizontalFacingBlock {
     public LogPigBlock(Block regularBlock, Settings settings) {
         super(settings.hardness(regularBlock.getHardness() / 2.0F).resistance(0.75F));
     }
-    @Override
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if (!world.isClient) {
-            world.playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundEvents.ENTITY_PIG_AMBIENT, SoundCategory.BLOCKS, 1.0f, 1.0f);
-        }
-        return ActionResult.SUCCESS;
-    }
 
 
 

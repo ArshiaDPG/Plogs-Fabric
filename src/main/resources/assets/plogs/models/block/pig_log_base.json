@@ -1,0 +1,31 @@
+{
+  "parent": "minecraft:block/cube",
+  "credit": "Made with Blockbench",
+  	"textures": {
+  		"log_end": "#log_end",
+  		"log_side": "#log_side",
+  		"hole": "#hole",
+  		"particle": "#log_side"
+  	},
+  	"elements": [
+  		{
+  			"from": [0, 0, 0],
+  			"to": [16, 16, 16],
+  			"faces": {
+  				"north": {"uv": [0, 0, 16, 16], "texture": "#log_side"},
+  				"east": {"uv": [0, 0, 16, 16], "texture": "#log_side"},
+  				"south": {"uv": [0, 0, 16, 16], "texture": "#log_side"},
+  				"west": {"uv": [0, 0, 16, 16], "texture": "#log_side"},
+  				"up": {"uv": [0, 0, 16, 16], "texture": "#log_end"},
+  				"down": {"uv": [0, 0, 16, 16], "texture": "#log_end"}
+  			}
+  		},
+  		{
+  			"from": [0, 0, 0],
+  			"to": [16, 16, 0],
+  			"faces": {
+  				"north": {"uv": [0, 0, 16, 16], "texture": "#hole"}
+  			}
+  		}
+  	]
+}
