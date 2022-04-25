@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "plogs:block/stem_hoglin",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "plogs:block/stem_hoglin"
+    },
+    "facing=south": {
+      "model": "plogs:block/stem_hoglin",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "plogs:block/stem_hoglin",
+      "y": 270
+    }
+  }
+}

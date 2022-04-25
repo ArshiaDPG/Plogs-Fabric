@@ -1,38 +1,35 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "plogs",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Plogs",
+  "description": "Pigs in logs, what more could one ever need?",
   "authors": [
-    "Me!"
+    "DigitalPear"
   ],
-  "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
-  },
+  "contact": {},
 
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "license": "MIT",
+  "icon": "assets/plogs/icon.png",
 
   "environment": "*",
   "entrypoints": {
+    "client": [
+      "net.digitalpear.plogs.client.PlogsModClient"
+    ],
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "net.digitalpear.plogs.PlogsMod"
     ]
   },
-  "mixins": [
-    "modid.mixins.json"
-  ],
 
+          "mixins": [
+        "plogs.mixins.json"
+      ],
+    
   "depends": {
     "fabricloader": ">=0.13.3",
-    "fabric": "*",
-    "minecraft": "1.18.x",
-    "java": ">=17"
-  },
-  "suggests": {
-    "another-mod": "*"
+              "fabric": "*",
+          "minecraft": "1.18.*"
   }
 }

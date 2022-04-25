@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "plogs:block/log_pig",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "plogs:block/log_pig"
+    },
+    "facing=south": {
+      "model": "plogs:block/log_pig",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "plogs:block/log_pig",
+      "y": 270
+    }
+  }
+}
