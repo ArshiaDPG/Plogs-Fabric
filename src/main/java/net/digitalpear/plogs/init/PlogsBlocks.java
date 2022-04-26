@@ -42,6 +42,6 @@ public class PlogsBlocks {
 
 
     public static void init(){
-        PlogsMod.LOGGER.info("Registering Mod Blocks for " + MOD_ID);
+        PlogsMod.LOGGER.info("Registering blocks for " + MOD_ID);
     }
 }

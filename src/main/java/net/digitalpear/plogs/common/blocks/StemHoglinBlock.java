@@ -10,11 +10,14 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.mob.HoglinEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion;
@@ -22,8 +25,6 @@ import net.minecraft.world.explosion.Explosion;
 import java.util.Random;
 
 public class StemHoglinBlock extends HorizontalFacingBlock {
-    public static int zombifyingChance = 3;
-
     public StemHoglinBlock(Block regularBlock, Settings settings) {
         super(settings.hardness(regularBlock.getHardness() / 2.0F).resistance(0.75F).ticksRandomly());
     }
@@ -33,9 +34,12 @@ public class StemHoglinBlock extends HorizontalFacingBlock {
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         if (!world.isClient) {
             if (world.getDimension().isBedWorking()) {
-                if (random.nextInt(10) > zombifyingChance) {
-                    world.setBlockState(pos, PlogsBlocks.STEM_ZOGLIN.getDefaultState());
-                }
+                double d = random.nextGaussian() * 0.02D;
+                double e = random.nextGaussian() * 0.02D;
+                double f = random.nextGaussian() * 0.02D;
+                Direction direction = state.get(Properties.HORIZONTAL_FACING);
+                world.addParticle(ParticleTypes.EFFECT, pos.getX(), pos.getY(), pos.getZ(), d, e, f);
+                world.setBlockState(pos, PlogsBlocks.STEM_ZOGLIN.getDefaultState().with(Properties.HORIZONTAL_FACING, direction));
             }
         }
     }
