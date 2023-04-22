@@ -1,0 +1,8 @@
+{
+  "parent": "plogs:block/log_pig_base",
+  "textures": {
+    "hole": "plogs:block/hoglin_hole",
+    "log_end": "minecraft:block/crimson_stem_top",
+    "log_side": "minecraft:block/crimson_stem"
+  }
+}

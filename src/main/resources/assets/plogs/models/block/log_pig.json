@@ -1,8 +1,0 @@
-{
-    "parent": "plogs:block/pig_log_base",
-    "textures": {
-        "log_end": "block/oak_log_top",
-        "log_side": "block/oak_log",
-        "hole": "plogs:block/pig_hole"
-    }
-}

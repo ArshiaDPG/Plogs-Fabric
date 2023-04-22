@@ -1,0 +1,10 @@
+// 1.19.4	2023-04-22T16:26:19.1351354	Plogs/Model Definitions
+bbfe6bf53da89d2dc637e64cc49c1329134122f5 assets\plogs\blockstates\stem_hoglin.json
+66996685f04a8f3bc313f28beeefde6583300aa8 assets\plogs\blockstates\log_pig.json
+528e19705e5ec9d34fadc4082297fb7b56a84fe2 assets\plogs\models\block\stem_hoglin.json
+d20b3ac6a7996c7966f07a19f27b2731182386cd assets\plogs\blockstates\stem_zoglin.json
+1197beb9beebfda285d3a2272e95e674c3abbe69 assets\plogs\models\item\log_pig.json
+32c9d56d836b47d35b9ce078fbf7e96691b97381 assets\plogs\models\block\log_pig.json
+fab5c68c4a0cbdc3fe49b8d9a7d602bb7b58113a assets\plogs\models\item\stem_hoglin.json
+5c47c328edd419646cdbf6619a7a5b3f1568f10d assets\plogs\models\item\stem_zoglin.json
+4f83c1157ce9f88058bf5b43409a3f1b48bb68d0 assets\plogs\models\block\stem_zoglin.json

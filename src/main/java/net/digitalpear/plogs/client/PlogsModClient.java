@@ -9,10 +9,12 @@ import net.minecraft.client.render.RenderLayer;
 
 @Environment(EnvType.CLIENT)
 public class PlogsModClient implements ClientModInitializer {
+
     @Override
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlock(PlogsBlocks.LOG_PIG, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(PlogsBlocks.STEM_HOGLIN, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(PlogsBlocks.STEM_ZOGLIN, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(PlogsBlocks.LOG_SNOW_PIG, RenderLayer.getCutout());
     }
 }

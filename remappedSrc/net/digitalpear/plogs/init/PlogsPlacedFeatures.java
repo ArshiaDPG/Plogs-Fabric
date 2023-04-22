@@ -20,5 +20,7 @@ public class PlogsPlacedFeatures {
         RegistryKey<PlacedFeature> stem_hoglin_patch = RegistryKey.of(Registry.PLACED_FEATURE_KEY,
                 new Identifier(MOD_ID, "hoglin_nest"));
         BiomeModifications.addFeature(BiomeSelectors.tag(PlogsTags.HAS_HOGLIN_NEST), GenerationStep.Feature.VEGETAL_DECORATION, stem_hoglin_patch);
+
+        PlogsMod.LOGGER.info("Registering features for " + MOD_ID);
     }
 }

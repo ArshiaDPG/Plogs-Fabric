@@ -1,63 +1,31 @@
 package net.digitalpear.plogs.common.blocks;
 
+import net.digitalpear.plogs.init.PlogsBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.HorizontalFacingBlock;
-import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.mob.HoglinEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.item.ItemStack;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.state.StateManager;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.GameRules;
-import net.minecraft.world.World;
-import net.minecraft.world.explosion.Explosion;
 
-public class StemHoglinBlock extends HorizontalFacingBlock {
-    public StemHoglinBlock(Block regularBlock, Settings settings) {
-        super(settings.hardness(regularBlock.getHardness() / 2.0F).resistance(0.75F));
+import java.util.Random;
+
+public class StemHoglinBlock extends AbstractPigLogBlock {
+    public StemHoglinBlock(EntityType<?> pig, Block logBlock, Settings settings) {
+        super(pig, logBlock, settings);
     }
 
-
-
-    private void spawnPig(ServerWorld world, BlockPos pos) {
-        HoglinEntity pigfishEntity = EntityType.HOGLIN.create(world);
-        pigfishEntity.refreshPositionAndAngles((double)pos.getX() + 0.5, pos.getY(), (double)pos.getZ() + 0.5, 0.0f, 0.0f);
-        world.playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.BLOCKS, 1.0f, 1.0f);
-        world.spawnEntity(pigfishEntity);
-        pigfishEntity.playSpawnEffects();
-    }
-
+    //Rusting
     @Override
-    public void onStacksDropped(BlockState state, ServerWorld world, BlockPos pos, ItemStack stack) {
-        super.onStacksDropped(state, world, pos, stack);
-        if (world.getGameRules().getBoolean(GameRules.DO_TILE_DROPS) && EnchantmentHelper.getLevel(Enchantments.SILK_TOUCH, stack) == 0) {
-            this.spawnPig(world, pos);
+    public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+        if (!world.isClient) {
+            if (world.getDimension().isBedWorking()) {
+                double d = random.nextGaussian() * 0.02D;
+                double e = random.nextGaussian() * 0.02D;
+                double f = random.nextGaussian() * 0.02D;
+                world.addParticle(ParticleTypes.EFFECT, pos.getX(), pos.getY(), pos.getZ(), d, e, f);
+                world.setBlockState(pos, PlogsBlocks.STEM_ZOGLIN.getStateWithProperties(state));
+            }
         }
-    }
-
-    @Override
-    public void onDestroyedByExplosion(World world, BlockPos pos, Explosion explosion) {
-        if (world instanceof ServerWorld) {
-            this.spawnPig((ServerWorld)world, pos);
-        }
-    }
-
-    @Override
-    public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState().with(FACING, ctx.getPlayerFacing().getOpposite());
-    }
-    @Override
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(FACING);
     }
 }

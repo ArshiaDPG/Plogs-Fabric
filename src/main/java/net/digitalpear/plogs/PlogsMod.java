@@ -14,5 +14,8 @@ public class PlogsMod implements ModInitializer {
     public void onInitialize() {
         PlogsBlocks.init();
         PlogsPlacedFeatures.init();
+
+
+        LOGGER.info(MOD_ID + " initialized correctly.");
     }
 }

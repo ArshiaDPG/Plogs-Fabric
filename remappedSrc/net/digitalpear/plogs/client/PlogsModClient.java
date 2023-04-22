@@ -13,5 +13,6 @@ public class PlogsModClient implements ClientModInitializer {
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlock(PlogsBlocks.LOG_PIG, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(PlogsBlocks.STEM_HOGLIN, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(PlogsBlocks.STEM_ZOGLIN, RenderLayer.getCutout());
     }
 }

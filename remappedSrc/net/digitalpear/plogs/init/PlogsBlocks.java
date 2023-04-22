@@ -1,12 +1,13 @@
 package net.digitalpear.plogs.init;
 
 import net.digitalpear.plogs.PlogsMod;
-import net.digitalpear.plogs.common.blocks.LogPigBlock;
+import net.digitalpear.plogs.common.blocks.AbstractPigLogBlock;
 import net.digitalpear.plogs.common.blocks.StemHoglinBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.*;
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
@@ -35,10 +36,12 @@ public class PlogsBlocks {
         return FabricBlockSettings.of(baseBlock.getDefaultState().getMaterial(), baseBlock.getDefaultMapColor()).sounds(BlockSoundGroup.NETHER_STEM);
     }
 
-    public static final Block LOG_PIG = createBlockWithItem("log_pig", new LogPigBlock(Blocks.OAK_LOG,createPigLogBlock(Blocks.OAK_LOG)), ItemGroup.DECORATIONS);
-    public static final Block STEM_HOGLIN = createBlockWithItem("stem_hoglin", new StemHoglinBlock(Blocks.CRIMSON_STEM,createPigStemBlock(Blocks.CRIMSON_STEM)), ItemGroup.DECORATIONS);
+    public static final Block LOG_PIG = createBlockWithItem("log_pig", new AbstractPigLogBlock(EntityType.PIG, Blocks.OAK_LOG,createPigLogBlock(Blocks.OAK_LOG)), ItemGroup.DECORATIONS);
+    public static final Block STEM_HOGLIN = createBlockWithItem("stem_hoglin", new StemHoglinBlock(EntityType.HOGLIN, Blocks.CRIMSON_STEM,createPigStemBlock(Blocks.CRIMSON_STEM)), ItemGroup.DECORATIONS);
+    public static final Block STEM_ZOGLIN = createBlockWithItem("stem_zoglin", new AbstractPigLogBlock(EntityType.ZOGLIN, Blocks.WARPED_STEM,createPigStemBlock(Blocks.WARPED_STEM)), ItemGroup.DECORATIONS);
+
 
     public static void init(){
-        PlogsMod.LOGGER.info("Registering Mod Blocks for " + MOD_ID);
+        PlogsMod.LOGGER.info("Registering blocks for " + MOD_ID);
     }
 }
