@@ -35,7 +35,7 @@ public class PlogsBlocks {
         return Registry.register(Registries.BLOCK, new Identifier(MOD_ID, blockID), block);
     }
     public static AbstractBlock.Settings makePigLog(Block log){
-        return AbstractBlock.Settings.of(log.getDefaultState().getMaterial()).sounds(log.getDefaultState().getSoundGroup()).hardness(log.getHardness() / 2.0F).resistance(log.getBlastResistance() / 2.0F);
+        return AbstractBlock.Settings.of(log.getDefaultState().getMaterial()).sounds(log.getDefaultState().getSoundGroup()).hardness(log.getHardness() / 2.0F).resistance(log.getBlastResistance() / 2.0F).mapColor(log.getDefaultMapColor());
     }
 
 
@@ -54,7 +54,5 @@ public class PlogsBlocks {
                 entries.add(LOG_SNOW_PIG);
             }
         });
-
-
     }
 }

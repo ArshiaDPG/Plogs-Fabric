@@ -12,6 +12,7 @@ public class PlogsLangGen extends FabricLanguageProvider {
     @Override
     public void generateTranslations(TranslationBuilder translationBuilder) {
         translationBuilder.add(PlogsBlocks.LOG_PIG, "Log of Pig");
+        translationBuilder.add(PlogsBlocks.LOG_SNOW_PIG, "Log of Snow Pig");
         translationBuilder.add(PlogsBlocks.STEM_HOGLIN, "Stem of Hoglin");
         translationBuilder.add(PlogsBlocks.STEM_ZOGLIN, "Stem of Zoglin");
     }

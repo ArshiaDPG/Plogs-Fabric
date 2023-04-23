@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "plogs:log_pig",
+    "plogs:log_snow_pig"
+  ]
+}

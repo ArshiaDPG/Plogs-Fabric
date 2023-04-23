@@ -14,6 +14,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
+import net.minecraft.util.BlockRotation;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.GameRules;
@@ -60,6 +61,7 @@ public class AbstractPigLogBlock extends HorizontalFacingBlock {
         Entity pigEntity = getPigType().create(world);
         assert pigEntity != null;
         pigEntity.refreshPositionAndAngles((double)pos.getX() + 0.5, pos.getY(), (double)pos.getZ() + 0.5, 0.0f, 0.0f);
+        pigEntity.applyRotation(BlockRotation.random(world.random));
         world.playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.BLOCKS, 1.0f, 1.0f);
         world.spawnEntity(pigEntity);
     }

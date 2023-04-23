@@ -1,5 +1,6 @@
 package net.digitalpear.plogs;
 
+import net.digitalpear.plogs.common.datagens.PlogsBlockLootTableGen;
 import net.digitalpear.plogs.common.datagens.PlogsLangGen;
 import net.digitalpear.plogs.common.datagens.models.PlogsModelGen;
 import net.digitalpear.plogs.common.datagens.providers.PlogsConfiguredFeatureProvider;
@@ -18,6 +19,7 @@ public class PlogsDatagens implements DataGeneratorEntrypoint {
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         fabricDataGenerator.createPack().addProvider(PlogsLangGen::new);
         fabricDataGenerator.createPack().addProvider(PlogsModelGen::new);
+        fabricDataGenerator.createPack().addProvider(PlogsBlockLootTableGen::new);
 
         fabricDataGenerator.createPack().addProvider(PlogsConfiguredFeatureProvider::new);
         fabricDataGenerator.createPack().addProvider(PlogsPlacedFeatureProvider::new);

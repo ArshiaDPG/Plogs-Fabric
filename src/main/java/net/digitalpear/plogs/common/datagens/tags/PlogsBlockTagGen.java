@@ -26,10 +26,11 @@ public class PlogsBlockTagGen extends FabricTagProvider<Block> {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
-        getOrCreateTagBuilder(PlogsBlockTags.PIG_LOGS).add(PlogsBlocks.LOG_PIG).forceAddTag(PlogsBlockTags.NETHER_PIG_LOGS);
+        getOrCreateTagBuilder(PlogsBlockTags.PIG_LOGS).forceAddTag(PlogsBlockTags.PIG_LOGS_THAT_BURN).forceAddTag(PlogsBlockTags.NETHER_PIG_LOGS);
+        getOrCreateTagBuilder(PlogsBlockTags.PIG_LOGS_THAT_BURN).add(PlogsBlocks.LOG_PIG).add(PlogsBlocks.LOG_SNOW_PIG);
         getOrCreateTagBuilder(PlogsBlockTags.NETHER_PIG_LOGS).add(PlogsBlocks.STEM_HOGLIN).add(PlogsBlocks.STEM_ZOGLIN);
 
-        getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN).add(PlogsBlocks.LOG_PIG);
+        getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN).forceAddTag(PlogsBlockTags.PIG_LOGS_THAT_BURN);
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE).forceAddTag(PlogsBlockTags.PIG_LOGS);
     }
 }

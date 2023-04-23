@@ -1,5 +1,6 @@
-// 1.19.4	2023-04-22T16:26:19.133141	Plogs/Tags for minecraft:block
-a2b518bcbf1c6b191d976a966d38d67be9983f87 data\minecraft\tags\blocks\logs_that_burn.json
+// 1.19.4	2023-04-22T16:59:48.1085931	Plogs/Tags for minecraft:block
+9483cdbd86dcd64eb4a2061d1e5427bb72c8d578 data\minecraft\tags\blocks\logs_that_burn.json
 e55de790228cad3f3a35e129e3d14edf57ef8f9b data\minecraft\tags\blocks\mineable\axe.json
+982ba9c5e9794178ce77cf799a8e11597f067cfe data\plogs\tags\blocks\pig_logs_that_burn.json
 4a5bd23865a2c1a43c659561d0cfaa3e82799092 data\plogs\tags\blocks\nether_pig_logs.json
-306c624467e7f31c852b5fe0dd9d45777c4036f5 data\plogs\tags\blocks\pig_logs.json
+821fd605492e9cbed053584da217119b49e3e927 data\plogs\tags\blocks\pig_logs.json

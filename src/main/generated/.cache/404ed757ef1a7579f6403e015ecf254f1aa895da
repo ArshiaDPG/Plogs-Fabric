@@ -1,7 +1,9 @@
-// 1.19.4	2023-04-22T16:26:19.1351354	Plogs/Model Definitions
+// 1.19.4	2023-04-22T16:59:48.1115856	Plogs/Model Definitions
+d325ffbbe5d27c42296f48548aa60c9ac0ac6421 assets\plogs\blockstates\log_snow_pig.json
 bbfe6bf53da89d2dc637e64cc49c1329134122f5 assets\plogs\blockstates\stem_hoglin.json
 66996685f04a8f3bc313f28beeefde6583300aa8 assets\plogs\blockstates\log_pig.json
 528e19705e5ec9d34fadc4082297fb7b56a84fe2 assets\plogs\models\block\stem_hoglin.json
+13157a2f8c5eee6836319cb36d4035508bdc150a assets\plogs\models\item\log_snow_pig.json
 d20b3ac6a7996c7966f07a19f27b2731182386cd assets\plogs\blockstates\stem_zoglin.json
 1197beb9beebfda285d3a2272e95e674c3abbe69 assets\plogs\models\item\log_pig.json
 32c9d56d836b47d35b9ce078fbf7e96691b97381 assets\plogs\models\block\log_pig.json

@@ -30,9 +30,12 @@ public class PlogsModelGen extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        makePigLog(blockStateModelGenerator, (AbstractPigLogBlock) PlogsBlocks.LOG_PIG);
-        makePigLog(blockStateModelGenerator, (AbstractPigLogBlock) PlogsBlocks.STEM_HOGLIN);
-        makePigLog(blockStateModelGenerator, (AbstractPigLogBlock) PlogsBlocks.STEM_ZOGLIN);
+        makePigLog(blockStateModelGenerator, (AbstractPigLogBlock) PlogsBlocks.LOG_PIG, PlogsMod.MOD_ID);
+        makePigLog(blockStateModelGenerator, (AbstractPigLogBlock) PlogsBlocks.STEM_HOGLIN, PlogsMod.MOD_ID);
+        makePigLog(blockStateModelGenerator, (AbstractPigLogBlock) PlogsBlocks.STEM_ZOGLIN, PlogsMod.MOD_ID);
+
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(PlogsBlocks.LOG_SNOW_PIG);
+
     }
 
     @Override
@@ -60,7 +63,7 @@ public class PlogsModelGen extends FabricModelProvider {
     }
 
     public void makePigLog(BlockStateModelGenerator blockStateModelGenerator, AbstractPigLogBlock plog){
-        Identifier MODEL = PIG_LOG_BASE.upload(plog, pigLog(plog.getLog(), plog.getPigType(), PlogsMod.MOD_ID), blockStateModelGenerator.modelCollector);
+        Identifier MODEL = PIG_LOG_BASE.upload(plog, pigLog(plog.getLog(), plog.getPigType()), blockStateModelGenerator.modelCollector);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(plog);
     }
     public void makePigLog(BlockStateModelGenerator blockStateModelGenerator, AbstractPigLogBlock plog, String modName){

@@ -9,6 +9,7 @@ import net.minecraft.util.Identifier;
 public class PlogsBlockTags {
 
     public static final TagKey<Block> PIG_LOGS = of("pig_logs");
+    public static final TagKey<Block> PIG_LOGS_THAT_BURN = of("pig_logs_that_burn");
     public static final TagKey<Block> NETHER_PIG_LOGS = of("nether_pig_logs");
 
     private static TagKey<Block> of(String id) {

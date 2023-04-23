@@ -1,6 +1,6 @@
 {
   "replace": false,
   "values": [
-    "plogs:log_pig"
+    "#plogs:pig_logs_that_burn"
   ]
 }
