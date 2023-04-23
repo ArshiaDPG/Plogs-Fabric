@@ -2,6 +2,7 @@ package net.digitalpear.plogs.common.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.HorizontalFacingBlock;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
@@ -37,7 +38,16 @@ public class AbstractPigLogBlock extends HorizontalFacingBlock {
         this.pigType = pig;
         this.log = logBlock;
     }
-
+    public AbstractPigLogBlock(Identifier pigId, Identifier logBlock, Settings settings) {
+        super(settings);
+        this.pigType = getPig(pigId);
+        this.log = getLog(logBlock);
+    }
+    public AbstractPigLogBlock(EntityType<?> pig, Identifier logBlock, Settings settings) {
+        super(settings);
+        this.pigType = pig;
+        this.log = getLog(logBlock);
+    }
 
 
     public EntityType<?> getPigType(){
@@ -48,6 +58,14 @@ public class AbstractPigLogBlock extends HorizontalFacingBlock {
         return log;
     }
 
+    private static Block getLog(Identifier id){
+        for (Block entityType : Registries.BLOCK) {
+            if (Registries.BLOCK.getId(entityType) == id) {
+                return Registries.BLOCK.get(id);
+            }
+        }
+        return Blocks.OAK_LOG;
+    }
     private static EntityType<?> getPig(Identifier id){
         for (EntityType<?> entityType : Registries.ENTITY_TYPE) {
             if (Registries.ENTITY_TYPE.getId(entityType) == id) {
@@ -57,7 +75,7 @@ public class AbstractPigLogBlock extends HorizontalFacingBlock {
         return EntityType.PIG;
     }
 
-    private void spawnPig(ServerWorld world, BlockPos pos){
+    public void spawnPig(ServerWorld world, BlockPos pos){
         Entity pigEntity = getPigType().create(world);
         assert pigEntity != null;
         pigEntity.refreshPositionAndAngles((double)pos.getX() + 0.5, pos.getY(), (double)pos.getZ() + 0.5, 0.0f, 0.0f);
